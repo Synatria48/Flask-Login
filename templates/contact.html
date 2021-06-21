@@ -1,0 +1,27 @@
+{% extends "main_layout.html" %}
+{% block content %}
+<div>
+    <h1>Ini Halaman Contact</h1>
+</div>
+
+<div>
+    <table class="table tabel-striped">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Jenis</th>
+            <th scope="col">Kontak</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for no,jenis,kontak in data['no'] | zip(data['jenis'], data['kontak']) %}
+          <tr>
+            <th scope="row">{{ no }}</th>
+            <td>{{ jenis }}</td>
+            <td>{{ kontak }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
