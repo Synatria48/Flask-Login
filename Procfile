@@ -1,0 +1,1 @@
+web: gunicorn main:main --reload --workers 2
